@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .flex {
+        display: flex;
+      }
+      .code {
+        display: flex;
+        background-color: darkorange;
+        flex: 47.5%;
+        margin-right: 2.5%;
+        padding: 15px;
+        height: 200px;
+        border-radius: 20px;
+      }
+      .explanation {
+        background-color: cadetblue;
+        box-shadow: beige;
+        flex: 47.5%;
+        margin-left: 2.5%;
+        padding: 15px;
+        height: 200px;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>
+        Let's say we have two arrays and we have to combine two arrays. We do
+        this in following manner:
+        <br />
+        let arr1 = ["Hi","Hello"];
+        <br />
+        let arr2 = ["Welcome"," Hey"];
+        <br />
+        let greet = arr1.concat(arr2);
+        <br />
+        <br />
+        <br />
+        In modern Javascript we use spread operator to do this.
+        <br />
+        let greet1 = [...arr1,...arr2];
+        <br />
+        What we do here. Well spread operator is represented using three dots
+        where we spread the first array, and that means we'll get every item in
+        this array and put it in our new array. And then similarly we'll spread
+        the second array.
+        <br />
+        <br />
+        <br />
+        You may say there's not really a difference between two ways of merging
+        2 arrays in terms of the length of the code, so why is this an
+        improvement. Well, what if you wanted to add an element in somewhere in
+        the middle and at the end. When you use concat operator your code looks
+        like this
+        <br />
+        let greet3 = arr1.concat("Hi everybody");
+        <br />
+        greet3 = greet3.concat(arr2);
+        <br />
+        greet3 = greet3.concat("Hey all");
+        <br />
+        <br />
+        But when you use spread operator your code looks much cleaner: let
+        greet2 = [...arr1,"Hi everybody",...arr2, "Hey all"];
+        <br />
+      </div>
+    </div>
+    <script src="lesson9.js"></script>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .flex {
+        display: flex;
+      }
+      .code {
+        display: flex;
+        background-color: darkorange;
+        flex: 47.5%;
+        margin-right: 2.5%;
+        padding: 15px;
+        height: 200px;
+        border-radius: 20px;
+      }
+      .explanation {
+        background-color: cadetblue;
+        box-shadow: beige;
+        flex: 47.5%;
+        margin-left: 2.5%;
+        padding: 15px;
+        height: 200px;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>
+        One thing you need to know about arrow functions is they don't rebind
+        this.The code below returns refernce to demo object.
+        <br />
+        <br />
+        <div>
+          const demo = {
+          <br />
+          &nbsp; &nbsp;demoPrint(){
+          <br />
+          &nbsp; &nbsp;&nbsp; &nbsp;console.log(this);
+          <br />
+          &nbsp; &nbsp;}
+          <br />
+          };
+          <br />
+          demo.demoPrint();
+        </div>
+        <br />
+        <br />
+
+        <div class="flex">
+          <div class="code">
+            const demo1 = {
+            <br />
+            &nbsp; &nbsp; demoPrint(){
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; //self=this <==
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; setTimeout(function(){
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; console.log(this);
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //console.log(self); <==
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; },1000);
+            <br />
+            &nbsp; &nbsp; }
+            <br />
+            };
+            <br />
+            demo1.demoPrint();
+          </div>
+          <div class="explanation">
+            In JavaScript we have global function called setTimeout. We can give
+            it a function and the time up value in milliseconds, so set time out
+            will execute this function after this time delay.
+            <br />
+            Now let's see what happens when we wrap demoPrint function inside of
+            a call to the set timeout function. So our code looks like this.
+          </div>
+        </div>
+        <br />
+        <br />
+        In the console, we get the window object, not the demo object. This
+        happened because here this callback function is not part of any objects.
+        It's a stand alone function. And when we call a function as a stand
+        alone function outside of an object, by default this returns the window
+        object.
+        <br />
+        <br />
+        Now to solve this, in olden days we set a varible to this out of this
+        function and use it. See the two commented lines. That's what we do.
+        <br />
+        <br />
+
+        <div class="flex">
+          <div class="code">
+            const demo2 = {
+            <br />
+            &nbsp; &nbsp; demoPrint(){
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; setTimeout(() => {
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; console.log(this);
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //console.log(self); <==
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; },2000);
+            <br />
+            &nbsp; &nbsp; }
+            <br />
+            };
+            <br />
+            demo2.demoPrint();
+          </div>
+          <div class="explanation">
+            With arrow functions we no longer have to do this. Because arrow
+            functions don't rebind this. In other words, if we change this
+            callback function to an arrow function, it will inherit the this
+            keyword.
+            <br />
+            <br />
+            So here is what we take away, here in this callback function,
+            because we have used the arrow function syntax, this is not reset
+            instead it inherits this in the context in which this code is
+            defined.
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="lesson6.js"></script>
+  </body>
+</html>

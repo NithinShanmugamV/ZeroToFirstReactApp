@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .flex {
+        display: flex;
+      }
+      .code {
+        display: flex;
+        background-color: darkorange;
+        flex: 47.5%;
+        margin-right: 2.5%;
+        padding: 15px;
+        height: 200px;
+        border-radius: 20px;
+      }
+      .explanation {
+        background-color: cadetblue;
+        box-shadow: beige;
+        flex: 47.5%;
+        margin-left: 2.5%;
+        padding: 15px;
+        height: 200px;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>
+        In Javascript we always access properties and methods using dot
+        notation. So, if you want to store a property in a variable we use the
+        following method.
+        <br />
+        <br />
+        <div class="flex">
+          <div class="code">
+            const marks = {
+            <br />
+            &nbsp; &nbsp; physics: 75,
+            <br />
+            &nbsp; &nbsp; chemistry: 80,
+            <br />
+            &nbsp; &nbsp; maths: 82
+            <br />
+            };
+            <br />
+            const physics = marks.physics;
+            <br />
+            const chemistry = marks.chemistry;
+            <br />
+            const maths = marks.maths;
+            <br />
+            console.log(physics,chemistry,maths);
+          </div>
+          <div class="explanation">
+            We need to extract the value of these properties, and store them in
+            separate variables. So this is what we typically do. We have to
+            access each and every object using dot notation and store it in
+            variables.
+            <br />
+            <br />
+            So you have to repetitively use marks. to access the property. In
+            modern Javascript we have something called Destructuring that solves
+            this problem.
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="flex">
+          <div class="code">
+            const marks = {
+            <br />
+            &nbsp; &nbsp; physics: 75,
+            <br />
+            &nbsp; &nbsp; chemistry: 80,
+            <br />
+            &nbsp; &nbsp; maths: 82
+            <br />
+            };
+            <br />
+            const {physics:phy, chemistry:chem, maths: mat} = marks; <==
+            <br />
+            console.log(phy,chem,mat);
+          </div>
+          <div class="explanation">
+            We can rewrite the above code like this. Let us see what code marked
+            with <== does. It takes physics, chemistry, maths properties from
+            marks and assign it to variable py, chem, mat. So this is exactly
+            same as
+            <br />
+            const phy = marks.physics;
+            <br />
+            const chem = marks.chemistry;
+            <br />
+            const mat = marks.maths;
+            <br />
+            <br />
+            It is not necessary that you have to access all property if yoou use
+            this method. If you want one property then you can access that
+            alone. And if name of the variable is exactly same as property that
+            you are accessing then the code becomes more cleaner.
+            <br />
+            const {physics} = marks;
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="lesson8.js"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        Spread opertor is also used in cloning an array.
+        <br />
+        <br />
+        let arr1 = ["Hi","Hello"];
+        <br />
+        let clone= [...arr1];
+        <br />
+        <br />
+        Now we can also apply the spread operator on objects to merge two
+        objects.
+        <br />
+        <br />
+        let obj1 = {
+        <br />
+        &nbsp; &nbsp; firstName:"Nithin"
+        <br />
+        };
+        <br />
+        let obj2 = {
+        <br />
+        &nbsp; &nbsp; secondName:"Shanmugam"
+        <br />
+        };
+        <br />
+        let combined = {...obj1,...obj2}
+        <br />
+        console.log(combined);
+        <br />
+        <br />
+        Note we used spread operator in {} instead of [] because last time we
+        used array which is represented in square brackets. Now we use objects
+        which is represented in object literal syntax. Also while using spread
+        operator in objects we can also optionally add additional properties to
+        it.
+        <br />
+        let combined1 = {...obj1,...obj2, age: 20};
+        <br />
+        <br />
+        similarly we can use spread operator to clone an object
+        <br />
+        let combined2 = {...combined1};
+      </div>
+    </div>
+    <script src="lesson10.js"></script>
+  </body>
+</html>

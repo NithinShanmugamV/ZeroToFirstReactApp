@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .flex {
+        display: flex;
+      }
+      .code {
+        display: flex;
+        background-color: darkorange;
+        flex: 47.5%;
+        margin-right: 2.5%;
+        padding: 15px;
+        height: 300px;
+        border-radius: 30px;
+      }
+      .explanation {
+        background-color: cadetblue;
+        box-shadow: beige;
+        flex: 47.5%;
+        margin-left: 2.5%;
+        padding: 15px;
+        height: 300px;
+        border-radius: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>
+        Let us now create a class called developer.
+        <div class="flex">
+          <div class="code">
+            class Developer {
+            <br />
+            &nbsp; &nbsp; constructor(name,age,role) {
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.name = name;
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.age = age;
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.role = role;
+            <br />
+            &nbsp; &nbsp; }
+            <br />
+            &nbsp; &nbsp; printRole(){
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; console.log(this.role);
+            <br />
+            &nbsp; &nbsp; }
+            <br />
+            }
+          </div>
+          <div class="explanation">
+            This has properties name and age which is also a property of class
+            person. In real life applications we may have properties that are
+            also a property of another class.
+            <br />
+            <br />
+            So, instead of assigning a property again we may inherit property of
+            base class. In this case, we can inherit property name, age of
+            Person to Developer class.
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="flex">
+          <div class="code">
+            class Developer1 extends person {
+            <br />
+            &nbsp; &nbsp; constructor(name,age,role) {
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; super(name);
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; super(age);
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.role = role;
+            <br />
+            &nbsp; &nbsp; }
+            <br />
+            &nbsp; &nbsp; printRole(){
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; console.log(this.role);
+            <br />
+            &nbsp; &nbsp; }
+            <br />
+            const dev1 = new Developer1("Nithin",20,"React Developer");
+            <br />
+            }
+          </div>
+          <div class="explanation">
+            We can have this Developer1 class inherit from the person class, and
+            this means it will inherit all the methods defined in this person
+            class.
+            <br />
+            <br />
+            we add the keyword extends Person. So Developer1 extends person.
+            Now, if we create a Developer1 object dev1, set it to a new
+            Developer1, look how it's constructor. You see the name parameter
+            right? So the Developer1 class is also inheriting the constructor of
+            the person class.
+            <br />
+            <br />
+            Whenever we add the constructor in a child class we need to call the
+            constructor of it's parent class. So, here in the constructor we
+            have this special keyword, super, that references the parent class.
+            So, we call it just like a method, and you can see we have the name
+            and age parameters so we pass this name argument that we receive
+          </div>
+        </div>
+
+        <br />
+      </div>
+    </div>
+    <script src="lesson12.js"></script>
+  </body>
+</html>

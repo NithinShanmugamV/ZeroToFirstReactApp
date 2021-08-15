@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      We know that let variable is introduced ES6 version of Javascript. Let us
+      see why it got introduced.
+      <br />
+      <br />
+      Let us take a function that gets a number nand prints number sequence from
+      1 to n:
+      <br />
+      <div>
+        function printNum(n){
+        <br />
+        &nbsp; &nbsp;for(var i=1;i<=n;i++){
+        <br />
+        &nbsp; &nbsp; &nbsp; &nbsp;console.log(i);
+        <br />
+        &nbsp; &nbsp;}
+        <br />
+        &nbsp; &nbsp;console.log(i); <==
+        <br />
+        }printNum(3);
+        <br />
+      </div>
+      Note according to object oriented programming it should not print
+      4(console.log(i) matked with <==) as variable i is declared inside for
+      loop which is not accessible outside for loop. It shouldn't print 4 as it
+      is not defined outside for loop scope. But here it prints 4.So what
+      happens?
+      <br />
+      <br />
+      When we declare a variable using var keyword inside a loop which is inside
+      a function, var makes accessible anywhere inside the function but not
+      outside the function. To come out of this issue we use let keyword.
+      <br />
+      <br />
+      So here is the conclusion variables declared with var are scoped to the
+      function whereas variables declared with let are scoped to the the block
+      where it is defined. Variables declared using const are similar to let
+      which is scoped to the block where they are defined. The only difference
+      between let and const is const doesn't allow reassigning a variable. For
+      example:
+      <br />
+      const x = 8;
+      <br />
+      x=10;
+      <br />
+      throws ar error.
+    </div>
+    <script src="lesson1.js"></script>
+  </body>
+</html>

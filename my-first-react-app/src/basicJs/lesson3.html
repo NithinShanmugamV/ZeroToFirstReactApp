@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        This keyword works differently in JavaScript. Let us look at it.
+        <div>
+          const opertions = {
+          <br />
+          &nbsp; &nbsp; num1: 10,
+          <br />
+          &nbsp; &nbsp; num2:8,
+          <br />
+          &nbsp; &nbsp; demoPrint() {
+          <br />
+          &nbsp; &nbsp; &nbsp; &nbsp; console.log(this) <==
+          <br />
+          &nbsp; &nbsp; }
+          <br />
+          };
+          <br />
+          opertions.demoPrint();//1.
+          <br />
+          const demoPrint= opertions.demoPrint;//2.
+          <br />
+          console.log(demoPrint);
+          <br />
+          demoPrint();
+          <br />
+        </div>
+        <br />
+        When we write operations.demoPrint() (1.), this keyword returns refernce
+        to operations object. But this keyword doesn't work in the same way.
+        <br />
+        <br />
+        Instead of calling a method let us now refernce a method and assign it
+        to a variable(2.). Note,
+        <em>opertions.demoPrint</em>
+        is not calling method demoPrint. We are just getting refernce to that
+        method. To call we add parantheses
+        <em>opertions.demoPrint()</em>
+        . Still confusing, let us console.log demoPrint constant. Look you get a
+        refernce to that function. Now, what happens when we call this demoPrint
+        constant. We get something different, Why?.
+        <br />
+        <br />
+        That's why I told you that the this keyword in JavaScript behaves
+        differently from other programming languages. The value of this is
+        determined by how a function is called. If we call a function as a
+        method in an object(opertions.demoPrint();), this will always return a
+        reference to that object.
+        <br />
+        <br />
+        However, if we call a function as a stand alone object, or outside of an
+        object, this will return the global object which is the window object in
+        browsers. Note here const demoPrint= opertions.demoPrint; we reference a
+        method in object. But when you call it is not considered as calling a
+        method it is considered as calling a funtion, since we referenced a
+        method it is no more considered as method in an object.
+      </div>
+    </div>
+    <script src="lesson3.js"></script>
+  </body>
+</html>

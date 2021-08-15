@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        We can export one or more objects from a given module. These are called
+        named exports.You may say class is not an object. Well in JavaScript,
+        technically a class is an object. Because JavaScript classes are
+        syntactic sugar over constructor functions. And functions as I told you
+        before are objects so a class is technically an object in JavaScript.
+        <br />
+        <br />
+        There is something called default export in Js. If we have only one
+        object in module, we use default keyword.
+        <div>
+          <div class="code">
+            import { Person1 } from "./lesson11";
+            <br />
+            export class default Developer {
+            <br />
+            &nbsp; &nbsp; constructor(name,age,role) {
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.name = name;
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.age = age;
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.role = role;
+            <br />
+            &nbsp; &nbsp; }
+            <br />
+            &nbsp; &nbsp; printRole(){
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; console.log(this.role);
+            <br />
+            &nbsp; &nbsp; }
+            <br />
+            To import we use ,
+            <br />
+            import Developer1 from "./lesson12"; }
+          </div>
+          <div class="code1">
+            import { Person1 } from "./lesson11";
+            <br />
+            <br />
+            function hello(){} export class default Developer {
+            <br />
+            &nbsp; &nbsp; constructor(name,age,role) {
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.name = name;
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.age = age;
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.role = role;
+            <br />
+            &nbsp; &nbsp; }
+            <br />
+            &nbsp; &nbsp; printRole(){
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; console.log(this.role);
+            <br />
+            &nbsp; &nbsp; }
+            <br />
+            To import we use ,
+            <br />
+            import {Developer1, hello} from "./lesson12"; }
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="lesson14.js"></script>
+  </body>
+</html>

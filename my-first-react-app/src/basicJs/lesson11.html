@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .flex {
+        display: flex;
+      }
+      .code {
+        display: flex;
+        background-color: darkorange;
+        flex: 47.5%;
+        margin-right: 2.5%;
+        padding: 15px;
+        height: 300px;
+        border-radius: 30px;
+      }
+      .explanation {
+        background-color: cadetblue;
+        box-shadow: beige;
+        flex: 47.5%;
+        margin-left: 2.5%;
+        padding: 15px;
+        height: 300px;
+        border-radius: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>
+        Let's say you have an object. What if you want to create another object
+        with same methods and properties. You may try to duplicate it by copying
+        the code and pasting it and change name. But what if
+        <ul>
+          <li>The object has more than 10 lines of code.</li>
+          <li>The object has bug in it and you need to change every object.</li>
+        </ul>
+        So here we need to create something like a blueprint that can create
+        objects and if there is a bug it is enough to change that blueprint. We
+        can do this by using classes.
+        <div class="flex">
+          <div class="code">
+            class Person {
+            <br />
+            &nbsp; &nbsp; constructor(name,age) {
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.name = name,
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.age = age;
+            <br />
+            &nbsp; &nbsp; }
+            <br />
+            &nbsp; &nbsp; print(){
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; console.log(this.name,this.age);
+            <br />
+            &nbsp; &nbsp; }
+            <br />
+            &nbsp; &nbsp; info(){
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; return this.name,this.age;
+            <br />
+            &nbsp; &nbsp; }
+            <br />
+            }
+            <br />
+            const person1 = new Person("Nithin",20);
+            <br />
+            console.log(person1.info());
+            <br />
+            person1.print();
+          </div>
+          <div class="explanation">
+            We use pascal notation convention for naming classes. We need to add
+            another method here called constructor, so just like the print
+            method, constructor is a method, but the name is reserved.
+            <br />
+            Now this constructor can take parameters, so we can pass the name
+            from the outside and initialize it here. How, well, we use this, in
+            this case this always returns a reference to the current object, so
+            we set the name property of that object to this name argument that
+            we receive from the outside.
+            <br />
+            To create a person object person, we set it to a new person object.
+            When we have a class, to create an object, using that class, we need
+            to use the new operator. If you ignore the new keyword for a second,
+            this expression looks like calling a function. And that's exactly
+            our constructor method in the person class.
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="lesson11.js"></script>
+  </body>
+</html>

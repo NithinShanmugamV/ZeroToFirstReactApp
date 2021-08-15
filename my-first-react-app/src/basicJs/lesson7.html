@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .flex {
+        display: flex;
+      }
+      .code {
+        display: flex;
+        background-color: darkorange;
+        flex: 47.5%;
+        margin-right: 2.5%;
+        padding: 15px;
+        height: 200px;
+        border-radius: 20px;
+      }
+      .explanation {
+        background-color: cadetblue;
+        box-shadow: beige;
+        flex: 47.5%;
+        margin-left: 2.5%;
+        padding: 15px;
+        height: 200px;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>
+        ES6 introduced a new method in arrays called map. This is a very useful
+        method, which is used to render lists. So whenever you want to render a
+        list of items, that's when you use the map method of arrays.
+        <br />
+        <br />
+        Let's say we have to render each and every element in a different
+        colour. So we have array with three colours. So for each color you want
+        to have a list item like this.
+        <br />
+        <br />
+        <div class="flex">
+          <div class="code">
+            const colour = ["Blue","Orange","Green"];
+            <br />
+            const items = colour.map(colorName => {
+            <br />
+            &nbsp; &nbsp; return '&lt;li&gt;'+colorName+'&lt;/li&gt; ';
+            <br />
+            });
+            <br />
+          </div>
+          <div class="explanation">
+            We called the map on array colour, color.map. Here we need to pass a
+            callback function. So this function is called by the map method for
+            each item in this array and takes one item at a time transform each
+            element in this array and returns a new item.
+            <br />
+            <br />
+            So, a callback function takes an item, and returns a new item. Now
+            we take a color which is a string, and simply return a new string
+            like this. Now, this map method returns a new array so it doesn't
+            not modify the original array
+          </div>
+        </div>
+        <br />
+        <br />
+        This code returns an array with 3 list items which have colours in it =>
+        [" &lt;li&gt;Blue&lt;/li&gt; ", " &lt;li&gt;Orange&lt;/li&gt; ", "
+        &lt;li&gt;Green&lt;/li&gt; "]
+        <br />
+        <br />
+        We can even simplify and make the above code cleaner.
+        <br />
+        <br />
+        <div class="flex">
+          <div class="code">
+            const colour = ["Blue","Orange","Green"];
+            <br />
+            const items1 = colour.map(colorName =>
+            `&lt;li&gt;${colorName}&lt;/li&gt;`);
+            <br />
+          </div>
+          <div class="explanation">
+            Note we here used something different const items1 =
+            colour.map(colorName => `&lt;li&gt;${colorName}&lt;/li&gt;`);. This
+            is called template literals in ES6. So instead of using single or
+            double quotes, we use the back tick character.
+            <br />
+            <br />
+            Here we can define a template for the string, So we want to have the
+            opening and closing li tags. And in the middle we want to render the
+            color dynamically. So we add a dollar sign and curly braces, this is
+            an argument placeholder, what we put in between the braces will be
+            rendered dynamically at run time. So here we want to render this
+            color a template literal.
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="lesson7.js"></script>
+  </body>
+</html>

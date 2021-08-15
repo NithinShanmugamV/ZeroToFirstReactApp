@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        Now our Javascript code started becoming big. So, instead writing
+        everything in one file we can split the code in files. This method is
+        called modularity. And we call each file modules.
+        <br />
+        <br />
+        In old days we didn't have modules so they where using third party
+        applications. But from ES6, concept of modules is present natively in
+        Javascript.
+        <br />
+        <br />
+        now we can move each class to different file and add export infront of
+        every class so that they can be used in other files.
+        <br />
+        <br />
+        But at this point we still can't use classes from other file as they are
+        private. So now we add import stetement to every file. So our code looks
+        like This.
+        <br />
+        <br />
+        <div class="code">
+          import { Person1 } from "./lesson11";
+          <br />
+          export class Developer {
+          <br />
+          &nbsp; &nbsp; constructor(name,age,role) {
+          <br />
+          &nbsp; &nbsp; &nbsp; &nbsp; this.name = name;
+          <br />
+          &nbsp; &nbsp; &nbsp; &nbsp; this.age = age;
+          <br />
+          &nbsp; &nbsp; &nbsp; &nbsp; this.role = role;
+          <br />
+          &nbsp; &nbsp; }
+          <br />
+          &nbsp; &nbsp; printRole(){
+          <br />
+          &nbsp; &nbsp; &nbsp; &nbsp; console.log(this.role);
+          <br />
+          &nbsp; &nbsp; }
+          <br />
+          }
+        </div>
+      </div>
+    </div>
+    <script src="lesson13.js"></script>
+  </body>
+</html>

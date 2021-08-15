@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        Let us see about objects in this module. We will create an object using
+        const. So as you know objects in JavaScript are collections of key value
+        pairs. So I'm going to add a couple of key value pairs here.
+      </div>
+      <div>
+        const obj1 = {
+        <br />
+        &nbsp; &nbsp; num1: 10, //property
+        <br />
+        &nbsp; &nbsp; num2: 8,
+        <br />
+        &nbsp; &nbsp; add: function(a,b){ // method
+        <br />
+        &nbsp; &nbsp; &nbsp; &nbsp; return a+b;
+        <br />
+        &nbsp; &nbsp; },
+        <br />
+        &nbsp; &nbsp; subtract(a,b){ //ES6's simpler version of declaring method
+        <br />
+        &nbsp; &nbsp; &nbsp; &nbsp; return a-b;
+        <br />
+        &nbsp; &nbsp; }
+        <br />
+        };
+        <br />
+      </div>
+      There are two ways to access the properties and methods dot notation and
+      bracket notation.
+      <br />
+      <br />
+      person.add();// dot notation
+      <br />
+      person['sub'];//bracket notation
+      <br />
+    </div>
+    <script src="lesson2.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        In last webpage we understood that if you return a reference of object
+        method to a variable and call it, it returns window object. What if I
+        say that we can fix this issue and make it look like a calling a method.
+        <br />
+        <br />
+        We all knew that function is an object made by in-built object called
+        Function(). There is an method for this Function() object called bind
+        which can bind this method to an object.
+        <br />
+        <br />
+        <div>
+          const opertions = {
+          <br />
+          &nbsp; &nbsp; num1: 10,
+          <br />
+          &nbsp; &nbsp; num2:8,
+          <br />
+          &nbsp; &nbsp; demoPrint() {
+          <br />
+          &nbsp; &nbsp; &nbsp; &nbsp; console.log(this) <==
+          <br />
+          &nbsp; &nbsp; }
+          <br />
+          };
+          <br />
+          const demoPrint= opertions.demoPrint.bind(opertions)
+          <br />
+          demoPrint();
+        </div>
+        <br />
+        What did it do? Well bind functions takes a parameter as operations and
+        will return a new instance of this demoPrint function. And set this to
+        point to operations object. So, now when we call this demoPrint
+        function, we will see this person object on the console.
+      </div>
+    </div>
+    <script src="lesson4.js"></script>
+  </body>
+</html>

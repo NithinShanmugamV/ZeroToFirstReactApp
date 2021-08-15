@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .flex {
+        display: flex;
+      }
+      .normal {
+        display: flex;
+        background-color: darkorange;
+        flex: 47.5%;
+        margin-right: 2.5%;
+        padding: 15px;
+        height: 200px;
+        border-radius: 20px;
+      }
+      .arrow {
+        background-color: cadetblue;
+        box-shadow: beige;
+        flex: 47.5%;
+        margin-left: 2.5%;
+        padding: 15px;
+        height: 200px;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>
+        In modern JavaScript arrow functions are much cleaner and easier way to
+        write a code. Let us take a normal function and look at its arrow
+        function.
+        <br />
+        <br />
+        <div class="flex">
+          <div class="normal">
+            const firstName = "Nithin";
+            <br />
+            const lastName = "Shanmugam";
+            <br />
+            function greeting1(firstName, lastName) {
+            <br />
+            &nbsp; &nbsp; greet = firstName + " " + lastName;
+            <br />
+            &nbsp; &nbsp; return greet;
+            <br />
+            }
+            <br />
+            let sayHi = greeting1(firstName, lastName);
+            <br />
+            console.log(sayHi);
+            <br />
+          </div>
+          <div class="arrow">
+            const firstName = "Nithin";
+            <br />
+            const lastName = "Shanmugam";
+            <br />
+            const greeting2 = (firstName, lastName) => {
+            <br />
+            &nbsp; &nbsp; greet = firstName + " " + lastName;
+            <br />
+            &nbsp; &nbsp; return greet;
+            <br />
+            }
+            <br />
+            let sayHi = greeting2(firstName, lastName);
+            <br />
+            console.log(sayHi);
+            <br />
+          </div>
+        </div>
+        <br />
+        If your arrow function takes sigle parameter and has only single code
+        inside the block then it is much easier to write cleaner code. We can
+        get rid of parenthesis.If it doesn't take any parameter add empty
+        braces.
+        <br />
+        <br />
+        <div class="flex">
+          <div class="normal">
+            const firstName = "Nithin";
+            <br />
+            const greeting3 = firstName => "hi " + firstName;
+            <br />
+            console.log(greeting3(firstName));
+            <br />
+          </div>
+          <div class="arrow">
+            const greeting4 = () => "hi ";
+            <br />
+            console.log(greeting4());
+            <br />
+          </div>
+        </div>
+        Ok now let us see where this arrow function is helpful. Let us consider
+        an array that has list of students and also their fee paid status. Now
+        write a function that returns list of students who paid the fees.
+        <br />
+        <br />
+        <div class="flex">
+          <div class="normal">
+            let studentsPaid = students.filter(function (students){return
+            students.feePaid;});
+            <br />
+            console.log(studentsPaid);
+          </div>
+          <div class="arrow">
+            studentsPaid = students.filter(students => students.feePaid);
+            <br />
+            console.log(studentsPaid);
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="lesson5.js"></script>
+  </body>
+</html>
