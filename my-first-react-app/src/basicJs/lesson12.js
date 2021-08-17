@@ -26,8 +26,7 @@ class Developer {
 
 export class Developer1 extends Person {
     constructor(name,age,role){
-        super(name);
-        super(age);
+        super(name,age);
         this.role = role
     }
     printRole(){

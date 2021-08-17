@@ -5,6 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .flex {
+        display: flex;
+      }
+      .code {
+        background-color: darkorange;
+        flex: 47.5%;
+        margin-right: 2.5%;
+        padding: 15px;
+        height: 350px;
+        border-radius: 35px;
+      }
+      .code1 {
+        background-color: cadetblue;
+        box-shadow: beige;
+        flex: 47.5%;
+        margin-left: 2.5%;
+        padding: 15px;
+        height: 350px;
+        border-radius: 35px;
+      }
+    </style>
   </head>
   <body>
     <div>
@@ -18,11 +40,16 @@
         <br />
         There is something called default export in Js. If we have only one
         object in module, we use default keyword.
-        <div>
+        <br />
+        <br />
+        <div class="flex">
           <div class="code">
+            <b>Default exports:</b>
+            <br />
+            <br />
             import { Person1 } from "./lesson11";
             <br />
-            export class default Developer {
+            export class default Developer1 extends Person1 {
             <br />
             &nbsp; &nbsp; constructor(name,age,role) {
             <br />
@@ -40,15 +67,57 @@
             <br />
             &nbsp; &nbsp; }
             <br />
+            <br />
             To import we use ,
             <br />
-            import Developer1 from "./lesson12"; }
+            import Developer1 from "./lesson12";
           </div>
           <div class="code1">
+            <b>Named exports:</b>
+            <br />
+            <br />
             import { Person1 } from "./lesson11";
             <br />
             <br />
-            function hello(){} export class default Developer {
+            export function hello(){}
+            <br />
+            <br />
+            export class default Developer1 extends Person1 {
+            <br />
+            &nbsp; &nbsp; constructor(name,age,role) {
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.name = name;
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.age = age;
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; this.role = role;
+            <br />
+            &nbsp; &nbsp; }
+            <br />
+            &nbsp; &nbsp; printRole(){
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; console.log(this.role);
+            <br />
+            &nbsp; &nbsp; }
+            <br />
+            <br />
+            To import we use ,
+            <br />
+            import {Developer1, hello} from "./lesson12";
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="flex">
+          <div class="code">
+            <b>Default and named exports:</b>
+            <br />
+            <br />
+            import { Person1 } from "./lesson11";
+            <br />
+            export function hello(){}
+            <br />
+            export class default Developer1 extends Person1 {
             <br />
             &nbsp; &nbsp; constructor(name,age,role) {
             <br />
@@ -68,7 +137,33 @@
             <br />
             To import we use ,
             <br />
-            import {Developer1, hello} from "./lesson12"; }
+            import Developer1, {hello} from "./lesson12";
+          </div>
+          <div class="code1">
+            It is also possible that a module can have both named and default
+            exports in it. React is a good example of it. Let us take a little
+            look about this.
+            <br />
+            <br />
+            Let us make Developer1 class default export and hello function named
+            export. Now this module contains both named and default exports. So
+            to import named and default exports from this module, our import
+            statement looks like this.
+            <br />
+            <br />
+            import Developer1, {hello} from "./lesson12";
+            <br />
+            <br />
+            Now why is this important. You will see lot of this pattern when you
+            are developing react applications. Let us look at an example
+            <br />
+            import React, {component} from "react";
+            <br />
+            <br />
+            React is the default export from "react" library and component is
+            the named export . Note, we didn't use "./react". This is because we
+            use './' to modules that we have developed. react is a third party
+            module which is node modules.
           </div>
         </div>
       </div>
