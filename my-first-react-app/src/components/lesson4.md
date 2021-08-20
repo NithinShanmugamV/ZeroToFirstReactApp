@@ -51,8 +51,6 @@ So this actually looks like previously how it was.
 
 ```
 
-```
-
 import React, { Component } from 'react';
 
 class Counter extends Component {
@@ -82,4 +80,4 @@ export default Counter;
 
 ```
 
-```
+![Image](pics/lesson4.png?raw=true 'Title')

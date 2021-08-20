@@ -130,3 +130,5 @@ class Counter extends Component {
 export default Counter;
 
 ```
+
+![Image](pics/lesson5.png?raw=true 'Title')
