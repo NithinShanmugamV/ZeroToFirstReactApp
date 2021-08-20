@@ -1,6 +1,6 @@
 1. If you try to add extra html element to return statement you can see compilation error "JSX expressions must have one parent element."
 
-2. This is because this jsx expression(return <h1>Hello World</h1>;) get compiled to a call React.createElement(). First argument to this method is type element which in this case looks like this
+2. This is because this jsx expression(return &lt;h1&gt;Hello World&lt;/h1&gt;;) get compiled to a call React.createElement(). First argument to this method is type element which in this case looks like this
 
 ```
 React.createElement('h1');
@@ -58,4 +58,23 @@ return (
     );
 ```
 
-8. This does not add any extra node to dom.
+8. This does not add any extra node to dom. And our final code looks like:
+
+```
+import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+class Counter extends Component {
+  render() {
+    return (
+      <React.Fragment>
+        <h1>Hello World</h1>
+        <h2>Hi</h2>
+      </React.Fragment>
+    );
+  }
+}
+
+export default Counter;
+
+```
