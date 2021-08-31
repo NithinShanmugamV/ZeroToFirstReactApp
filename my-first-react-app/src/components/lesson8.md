@@ -1,4 +1,4 @@
-1. In last lesson we saw how to render a list. Sonow we will see conditional rendering. For that let us remove unwanted methids and elements that are not nneded for this lesson(getBootstrapBadgeClass(),greet(),span, button). So our code looks like
+1. In last lesson we saw how to render a list. So now we will see conditional rendering. For that let us remove unwanted methids and elements that are not nneded for this lesson(getBootstrapBadgeClass(),greet(),span, button). So our code looks like
 
 ```
 import React, { Component } from 'react';
