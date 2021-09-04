@@ -32,7 +32,7 @@ state = {
 let us add a span element give it a class. Note, in html we give class like this
 
 ```
-span class = "image"></span>
+<span class = "image"></span>
 ```
 
 Since we are using jsx expression, these jsx expressions get compiled in React elements which are essentially plain JavaScript objects. We cannot use a class property on an object, because that's a reserve keyword in JavaScript. So the name of the attribute in jsx is className.
