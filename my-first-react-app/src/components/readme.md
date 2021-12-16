@@ -7,3 +7,5 @@
 7.  rendering tags
 8. displaying list is empty if it array is empty.
 9. Event handlers and binding this.
+10. Updating the state and understand what happens when we do so
+11. Passing Event Arguments
